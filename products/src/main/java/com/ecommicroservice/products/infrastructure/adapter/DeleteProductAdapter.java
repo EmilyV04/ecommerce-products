@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
-public class DeleteProductService implements DeleteService {
+public class DeleteProductAdapter implements DeleteService {
 
   private final ProductRepository productRepository;
 
