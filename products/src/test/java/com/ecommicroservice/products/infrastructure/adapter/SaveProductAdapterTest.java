@@ -2,14 +2,12 @@ package com.ecommicroservice.products.infrastructure.adapter;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 import com.ecommicroservice.products.domain.entities.Product;
 import com.ecommicroservice.products.infrastructure.dto.ProductDto;
 import com.ecommicroservice.products.infrastructure.mapper.ProductMapper;
 import com.ecommicroservice.products.infrastructure.repository.ProductRepository;
-import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -18,6 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class SaveProductAdapterTest {
+
   @Mock
   private ProductRepository productRepository;
   @Mock

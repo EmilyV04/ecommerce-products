@@ -43,7 +43,7 @@ class GetProductTest {
   void getProductShouldReturnAProductGivenTheId() {
     //given
     String id = "123";
-    Product expectedProduct = new Product("123","product",1,1.0);
+    Product expectedProduct = new Product("123", "product", 1, 1.0);
     //when
     when(productGetService.getById(id)).thenReturn(expectedProduct);
     //then

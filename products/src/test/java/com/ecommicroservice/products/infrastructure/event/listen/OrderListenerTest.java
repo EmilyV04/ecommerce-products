@@ -1,6 +1,6 @@
 package com.ecommicroservice.products.infrastructure.event.listen;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
@@ -19,6 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class OrderListenerTest {
+
   @Mock
   private ProductRepository productRepository;
 
@@ -37,7 +38,8 @@ class OrderListenerTest {
 
     // Then
     Mockito.verify(productRepository).findById("123");
-    Mockito.verify(productRepository).save(argThat(updatedProduct -> updatedProduct.getStock() == 3));
+    Mockito.verify(productRepository)
+        .save(argThat(updatedProduct -> updatedProduct.getStock() == 3));
   }
 
   @Test

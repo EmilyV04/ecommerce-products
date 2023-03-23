@@ -44,10 +44,10 @@ class GetProductAdapterTest {
       ProductDto dto = invocation.getArgument(0);
       return new Product(dto.getId(), dto.getName(), dto.getStock(), dto.getPrice());
     }); /* This implementation will extract the ProductDto passed as an argument to the toEntity method,
-    * and create a new Product with the same values. Then, it will return that Product instance
-    * as the result of the method call. With this change, the actual list of products returned
-    * by getProductAdapter.getAll() should have the same values as the expected list,
-    * and the assertion should pass.*/
+     * and create a new Product with the same values. Then, it will return that Product instance
+     * as the result of the method call. With this change, the actual list of products returned
+     * by getProductAdapter.getAll() should have the same values as the expected list,
+     * and the assertion should pass.*/
 
     List<Product> listProductActual = getProductAdapter.getAll();
 

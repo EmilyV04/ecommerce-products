@@ -1,6 +1,5 @@
 package com.ecommicroservice.products.infrastructure.adapter;
 
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
