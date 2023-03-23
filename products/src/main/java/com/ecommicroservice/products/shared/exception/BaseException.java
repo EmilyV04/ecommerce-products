@@ -16,7 +16,6 @@ public class BaseException extends RuntimeException {
   private final LocalDateTime date;
   private final ExceptionCode exceptionCode;
   private final String id = UUID.randomUUID().toString();
-  private Throwable cause;
 
   protected BaseException(boolean retryable, HttpStatus status, String message,
       ExceptionCode exceptionCode) {
@@ -25,28 +24,6 @@ public class BaseException extends RuntimeException {
     this.message = message;
     this.status = status;
     this.exceptionCode = exceptionCode;
-    this.date = LocalDateTime.now(ZoneId.systemDefault());
-  }
-
-  protected BaseException(boolean retryable, HttpStatus status, String message,
-      ExceptionCode exceptionCode, Throwable cause) {
-    this.retryable = retryable;
-    this.code = exceptionCode.getCode();
-    this.message = message;
-    this.status = status;
-    this.exceptionCode = exceptionCode;
-    this.cause = cause;
-    this.date = LocalDateTime.now(ZoneId.systemDefault());
-  }
-
-  protected BaseException(boolean retryable, String message, ExceptionCode exceptionCode,
-      Throwable cause) {
-    this.retryable = retryable;
-    this.code = exceptionCode.getCode();
-    this.message = message;
-    this.status = HttpStatus.INTERNAL_SERVER_ERROR;
-    this.exceptionCode = exceptionCode;
-    this.cause = cause;
     this.date = LocalDateTime.now(ZoneId.systemDefault());
   }
 }

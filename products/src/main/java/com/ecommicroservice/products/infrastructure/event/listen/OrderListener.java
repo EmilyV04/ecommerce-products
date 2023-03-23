@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
-public class OrderConsumer {
+public class OrderListener {
 
   private final ProductRepository productRepository;
 
@@ -24,6 +24,4 @@ public class OrderConsumer {
     product.setStock(product.getStock() - message.getQuantity());
     productRepository.save(product);
   }
-
-
 }
